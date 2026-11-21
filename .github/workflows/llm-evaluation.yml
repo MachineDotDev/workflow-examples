@@ -1,0 +1,64 @@
+name: LLM evaluation gate
+on:
+  workflow_dispatch:
+    inputs:
+      baseline_ref:
+        description: Branch, tag or commit with the baseline answerer
+        required: true
+        default: main
+        type: string
+      defect:
+        description: Apply a deliberate defect to the candidate to check the gate rejects it
+        required: true
+        default: none
+        type: choice
+        options:
+          - none
+          - truncated-question
+permissions:
+  contents: read
+concurrency:
+  group: gpu-examples
+  cancel-in-progress: false
+jobs:
+  run:
+    if: github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main'
+    environment: gpu
+    runs-on: machine/id=${{ github.run_id }}-${{ github.run_attempt }}-evaluation/gpu=t4
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ inputs.baseline_ref }}
+          path: baseline
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884 # v10.3.0
+        with:
+          version: '0.13.0'
+          enable-cache: false
+      - name: Record versions
+        run: |
+          nvidia-smi
+          echo "candidate=$(git rev-parse HEAD) baseline=$(git -C baseline rev-parse HEAD) defect=${DEFECT}"
+        env:
+          DEFECT: ${{ inputs.defect }}
+      - name: Apply deliberate defect
+        if: inputs.defect != 'none'
+        run: git apply "llm-evaluation/defects/${DEFECT}.patch"
+        env:
+          DEFECT: ${{ inputs.defect }}
+      - name: Compare candidate with baseline
+        run: >-
+          uv run --locked --no-dev --extra evaluation python llm-evaluation/run.py
+          --baseline baseline/llm-evaluation --output outputs/evaluation
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        if: always()
+        with:
+          name: evaluation-${{ github.run_attempt }}
+          path: outputs/evaluation/
+          if-no-files-found: error
+          retention-days: 7

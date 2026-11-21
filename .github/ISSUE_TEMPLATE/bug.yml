@@ -1,0 +1,10 @@
+name: Workflow bug
+description: Report a failed example run.
+body:
+  - type: textarea
+    id: workflow
+    attributes:
+      label: Workflow and failure
+      description: Include the example, release tag, failed step and a run URL if you can share it. Remove credentials and private data.
+    validations:
+      required: true

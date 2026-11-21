@@ -1,0 +1,18 @@
+diff --git a/llm-evaluation/answerer.py b/llm-evaluation/answerer.py
+index 3c6c2f4..48a154f 100644
+--- a/llm-evaluation/answerer.py
++++ b/llm-evaluation/answerer.py
+@@ -7,9 +7,12 @@ their answers on the same questions with the same model.
+ 
+ import torch
+ 
++# Keep prompts short to reduce latency.
++MAX_QUESTION_CHARS = 48
++
+ 
+ def build_prompt(question):
+-    return f"Question: {question.strip()}\nAnswer:"
++    return f"Question: {question.strip()[:MAX_QUESTION_CHARS]}\nAnswer:"
+ 
+ 
+ @torch.inference_mode()

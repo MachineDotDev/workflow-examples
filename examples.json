@@ -1,0 +1,37 @@
+[
+  {
+    "id": "batch-object-detection",
+    "name": "Batch object detection",
+    "path": "batch-object-detection",
+    "workflow": ".github/workflows/batch-object-detection.yml",
+    "extra": "vision"
+  },
+  {
+    "id": "parallel-hyperparameter-tuning",
+    "name": "Parallel hyperparameter tuning",
+    "path": "parallel-hyperparameter-tuning",
+    "workflow": ".github/workflows/parallel-hyperparameter-tuning.yml",
+    "extra": "vision"
+  },
+  {
+    "id": "supervised-fine-tuning",
+    "name": "Supervised fine-tuning",
+    "path": "supervised-fine-tuning",
+    "workflow": ".github/workflows/supervised-fine-tuning.yml",
+    "extra": "training"
+  },
+  {
+    "id": "grpo-fine-tuning",
+    "name": "GRPO fine-tuning",
+    "path": "grpo-fine-tuning",
+    "workflow": ".github/workflows/grpo-fine-tuning.yml",
+    "extra": "training"
+  },
+  {
+    "id": "llm-evaluation",
+    "name": "LLM evaluation gate",
+    "path": "llm-evaluation",
+    "workflow": ".github/workflows/llm-evaluation.yml",
+    "extra": "evaluation"
+  }
+]
