@@ -5,6 +5,6 @@ body:
     id: workflow
     attributes:
       label: Workflow and failure
-      description: Include the example, release tag, failed step and a run URL if you can share it. Remove credentials and private data.
+      description: Include the example, commit, failed step and a run URL if you can share it. Remove credentials and private data.
     validations:
       required: true

@@ -6,7 +6,6 @@ Run GPU inference, training and evaluation from GitHub Actions with [Machine](ht
 Each example includes a small workload, locked dependencies and a workflow you can run manually.
 
 [![CI](https://github.com/MachineDotDev/workflow-examples/actions/workflows/ci.yml/badge.svg)](https://github.com/MachineDotDev/workflow-examples/actions/workflows/ci.yml)
-[![Release](https://img.shields.io/github/v/release/MachineDotDev/workflow-examples)](https://github.com/MachineDotDev/workflow-examples/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 See [verification status](docs/verification.md) for the GPU runs behind each example.
