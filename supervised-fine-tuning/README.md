@@ -22,4 +22,4 @@ Run this command from the repository root. The shared `pyproject.toml` and `uv.l
 
 The default run trains for two steps, saves a checkpoint, then starts a new Python process, resumes the checkpoint and trains step three. The resumed run fails unless step three changes the adapter weights saved in the checkpoint. The learning rate is constant so the resumed step still trains. This checks checkpoint loading on the same runner. It does not test recovery from an interrupted instance. Replace the toy texts and add held-out evaluation before using this for a real training task.
 
-Results include the GPU and PyTorch version. Artifacts expire after seven days, so download anything you want to keep. See [verification status](../docs/verification.md) for the runs completed against this version.
+Results include the GPU and PyTorch version. Artifacts expire after seven days, so download anything you want to keep. See [verification status](../docs/verification.md) for the latest GPU runs and the commit they tested.

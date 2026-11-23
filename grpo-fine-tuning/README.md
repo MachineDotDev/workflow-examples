@@ -22,4 +22,4 @@ Run this command from the repository root. The shared `pyproject.toml` and `uv.l
 
 The reward gives most credit for a correct number, with a small length reward to distinguish attempts. This is a toy reward, not a recommendation for production training. Each prompt produces two completions. The default run trains for two steps, then resumes the saved checkpoint in a new process and trains step three with a constant learning rate. Each run fails unless its steps change the adapter weights (for the resumed run, compared with the checkpoint); it does not prove the model got better or simulate a spot interruption.
 
-Results include the GPU and PyTorch version. Artifacts expire after seven days, so download anything you want to keep. See [verification status](../docs/verification.md) for the runs completed against this version.
+Results include the GPU and PyTorch version. Artifacts expire after seven days, so download anything you want to keep. See [verification status](../docs/verification.md) for the latest GPU runs and the commit they tested.

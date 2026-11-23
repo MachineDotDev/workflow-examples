@@ -22,4 +22,4 @@ Run this command from the repository root. The shared `pyproject.toml` and `uv.l
 
 The run fails if it finds no objects or produces non-finite boxes. The images are downloaded at runtime; network or upstream model failures will fail the job.
 
-Results include the GPU and PyTorch version. Artifacts expire after seven days, so download anything you want to keep. See [verification status](../docs/verification.md) for the runs completed against this version.
+Results include the GPU and PyTorch version. Artifacts expire after seven days, so download anything you want to keep. See [verification status](../docs/verification.md) for the latest GPU runs and the commit they tested.
