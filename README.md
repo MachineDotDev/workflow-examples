@@ -29,7 +29,7 @@ See [verification status](docs/verification.md) for the GPU runs behind each exa
 
 No Hugging Face token is needed for these public models. The training jobs save adapters to GitHub artifacts and don't publish models.
 
-GPU jobs incur Machine usage charges. Each job stops after 30 minutes; the tuning matrix runs one configuration at a time. A cancelled or failed job can still incur charges. The defaults are small enough to check the execution path, but they aren't useful training runs or reliable model comparisons.
+GPU jobs incur Machine usage charges. Each job stops after 30 minutes; the tuning matrix starts four jobs at once. A cancelled or failed job can still incur charges. The defaults are small enough to check the execution path, but they aren't useful training runs or reliable model comparisons.
 
 ## Runner labels
 

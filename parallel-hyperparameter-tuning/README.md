@@ -20,6 +20,6 @@ Run this command from the repository root. The shared `pyproject.toml` and `uv.l
 
 ## What the run checks
 
-The matrix uses learning rates 0.001 and 0.0001 with batch sizes 8 and 16. Each job trains for two steps and checks that model parameters changed. Jobs run one at a time by default; increase max-parallel only when your Machine team has enough runner capacity. Two steps measure execution, not model quality.
+The matrix uses learning rates 0.001 and 0.0001 with batch sizes 8 and 16. Each job trains for two steps and checks that model parameters changed. All four jobs start together. Machine starts each one when your team has a free runner slot; jobs above your team's limit wait their turn. Two steps measure execution, not model quality.
 
 Results include the GPU and PyTorch version. Artifacts expire after seven days, so download anything you want to keep. See [verification status](../docs/verification.md) for the runs completed against this version.
