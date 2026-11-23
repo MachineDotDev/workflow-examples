@@ -1,6 +1,6 @@
 # Sources and branding
 
-The examples continue the five Machine example projects: [GPU batch object detection](https://github.com/MachineDotDev/gpu-batch-object-detection), [parallel hyperparameter tuning](https://github.com/MachineDotDev/parallel-hyperparameter-tuning), [supervised fine-tuning](https://github.com/MachineDotDev/llm-supervised-fine-tuning), [GRPO fine-tuning](https://github.com/MachineDotDev/grpo-fine-tune) and [language model arena](https://github.com/MachineDotDev/language-model-arena). This repository starts with fresh history and updated workloads.
+This repository replaces Machine's earlier single-example repositories, with fresh history and updated workloads.
 
 The banner (`assets/machine-banner.png`, 2560×1280) is a cropped, rotated
 close-up of the Machine mark (`https://machine.dev/brand/svg/mtron-mark.svg`),
