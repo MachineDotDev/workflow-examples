@@ -6,20 +6,19 @@ Run GPU inference, training and evaluation from GitHub Actions with [Machine](ht
 Each example includes a small workload, locked dependencies and a workflow you can run manually.
 
 [![CI](https://github.com/MachineDotDev/workflow-examples/actions/workflows/ci.yml/badge.svg)](https://github.com/MachineDotDev/workflow-examples/actions/workflows/ci.yml)
-[![Release](https://img.shields.io/github/v/release/MachineDotDev/workflow-examples)](https://github.com/MachineDotDev/workflow-examples/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 See [verification status](docs/verification.md) for the GPU runs behind each example.
 
 ## Examples
 
-| Example | What runs | Output |
-| --- | --- | --- |
-| [Batch object detection](batch-object-detection/) | DETR inference on two images | Detection boxes and labels |
-| [Parallel hyperparameter tuning](parallel-hyperparameter-tuning/) | Four ResNet50 configurations on CIFAR-10 | Losses for each configuration |
-| [Supervised fine-tuning](supervised-fine-tuning/) | LoRA training on SmolLM2 | Adapter and resumable checkpoints |
-| [GRPO fine-tuning](grpo-fine-tuning/) | Arithmetic rewards on SmolLM2 generations | Adapter and resumable checkpoints |
-| [LLM evaluation gate](llm-evaluation/) | A candidate answerer against a baseline on 500 ARC Easy questions | Per-question answers and a pass/fail regression decision |
+| Example | What runs | Output | Guide |
+| --- | --- | --- | --- |
+| [Batch object detection](batch-object-detection/) | DETR inference on two images | Detection boxes and labels | [Read](https://machine.dev/docs/use-cases/gpu-object-detection/?utm_source=github&utm_medium=oss&utm_campaign=2026-11-workflow-examples&utm_content=batch-object-detection) |
+| [Parallel hyperparameter tuning](parallel-hyperparameter-tuning/) | Four ResNet50 configurations on CIFAR-10 | Losses for each configuration | [Read](https://machine.dev/docs/use-cases/parallel-hyperparameter-tuning/?utm_source=github&utm_medium=oss&utm_campaign=2026-11-workflow-examples&utm_content=parallel-hyperparameter-tuning) |
+| [Supervised fine-tuning](supervised-fine-tuning/) | LoRA training on SmolLM2 | Adapter and resumable checkpoints | [Read](https://machine.dev/docs/use-cases/llm-supervised-fine-tuning/?utm_source=github&utm_medium=oss&utm_campaign=2026-11-workflow-examples&utm_content=supervised-fine-tuning) |
+| [GRPO fine-tuning](grpo-fine-tuning/) | Arithmetic rewards on SmolLM2 generations | Adapter and resumable checkpoints | [Read](https://machine.dev/docs/use-cases/grpo-fine-tuning/?utm_source=github&utm_medium=oss&utm_campaign=2026-11-workflow-examples&utm_content=grpo-fine-tuning) |
+| [LLM evaluation gate](llm-evaluation/) | A candidate answerer against a baseline on 500 ARC Easy questions | Per-question answers and a pass/fail regression decision | [Read](https://machine.dev/docs/use-cases/language-model-arena/?utm_source=github&utm_medium=oss&utm_campaign=2026-11-workflow-examples&utm_content=llm-evaluation) |
 
 ## Run an example
 
@@ -30,7 +29,7 @@ See [verification status](docs/verification.md) for the GPU runs behind each exa
 
 No Hugging Face token is needed for these public models. The training jobs save adapters to GitHub artifacts and don't publish models.
 
-GPU jobs incur Machine usage charges. Each job stops after 30 minutes; the tuning matrix runs one configuration at a time. A cancelled or failed job can still incur charges. The defaults are small enough to check the execution path, but they aren't useful training runs or reliable model comparisons.
+GPU jobs incur Machine usage charges. Each job stops after 30 minutes; the tuning matrix starts four jobs at once. A cancelled or failed job can still incur charges. The defaults are small enough to check the execution path, but they aren't useful training runs or reliable model comparisons.
 
 ## Runner labels
 

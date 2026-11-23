@@ -2,6 +2,8 @@
 
 DETR finds objects in two COCO validation images and writes their labels, scores and bounding boxes.
 
+The [machine.dev guide](https://machine.dev/docs/use-cases/gpu-object-detection/?utm_source=github&utm_medium=oss&utm_campaign=2026-11-workflow-examples&utm_content=batch-object-detection) walks through the workflow, what a real run found and how to adapt it to your project.
+
 ## How to run
 
 1. Complete the [repository setup](../README.md#run-an-example).
