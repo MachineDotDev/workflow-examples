@@ -6,7 +6,7 @@ The repository follows the relevant controls from [nat-zero](https://github.com/
 
 Only `workflow_dispatch` starts GPU jobs. Each job checks that it is running from `main` and checks out the event's exact commit. GitHub requires write access to dispatch a workflow. Automatic pull request checks run on GitHub-hosted CPU runners with no repository secrets.
 
-Every GPU job runs in the `gpu` environment, which requires Leonard's approval before the job starts, with no administrator bypass. Pull requests from external contributors need approval before any workflow runs. All GPU workflows share a concurrency group. GitHub keeps one pending run per group, so dispatch and finish one example before starting the next.
+Every GPU job in these workflows runs in the `gpu` environment, which requires Leonard's approval before the job starts, with no administrator bypass. Pull requests from external contributors need approval before any workflow runs. That approval is the real gate for pull requests: a pull request runs its own copy of the workflow files, so it can change a CPU job's `runs-on` to a Machine label and drop the environment. Before you approve a contributor's workflow run, read every change under `.github/workflows/`; never approve one that adds a `machine/` runner label. All GPU workflows share a concurrency group. GitHub keeps one pending run per group, so dispatch and finish one example before starting the next.
 
 ## Maintenance
 

@@ -28,7 +28,7 @@ The [machine.dev guide](https://machine.dev/docs/use-cases/language-model-arena/
 To run on a Linux machine with an NVIDIA GPU, from the repository root:
 
 ```sh
-git worktree add ../baseline main
+git worktree add --detach ../baseline main
 uv run --locked --no-dev --extra evaluation python llm-evaluation/run.py \
   --baseline ../baseline/llm-evaluation --output outputs/evaluation
 ```

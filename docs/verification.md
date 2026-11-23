@@ -47,6 +47,6 @@ code on a T4 runner on 2026-11-15, before this repository existed.
 | Check | Evidence |
 | --- | --- |
 | Linux installation and ML APIs | [CI passed](https://github.com/MachineDotDev/workflow-examples/actions/runs/44851680125): locked CUDA packages installed; trainer configurations, imports and the evaluation gate's unit tests passed |
-| Workflow rules | `scripts/validate_examples.py` checks every GPU job runs from `main` in the `gpu` environment with a timeout and pinned Actions |
+| Workflow rules | `scripts/validate_examples.py` checks every job with a Machine runner label is dispatch-only, runs from `main` in the `gpu` environment with read-only permissions and a timeout, and that every Action is pinned to a full SHA |
 | Secret scanning and push protection | Enabled |
 | Dependabot | Security updates enabled; monthly version updates for uv, Actions and pre-commit |

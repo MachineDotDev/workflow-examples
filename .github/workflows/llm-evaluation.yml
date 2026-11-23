@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
     inputs:
       baseline_ref:
-        description: Branch, tag or commit with the baseline answerer
+        description: Branch or tag with the baseline answerer
         required: true
         default: main
         type: string
@@ -31,6 +31,14 @@ jobs:
         with:
           ref: ${{ github.sha }}
           persist-credentials: false
+      - name: Check the baseline is a branch or tag here
+        env:
+          BASELINE_REF: ${{ inputs.baseline_ref }}
+          REPO_URL: ${{ github.server_url }}/${{ github.repository }}.git
+        run: |
+          case "$BASELINE_REF" in refs/*) echo "Give a branch or tag name, not $BASELINE_REF"; exit 1;; esac
+          git ls-remote --exit-code "$REPO_URL" "refs/heads/$BASELINE_REF" "refs/tags/$BASELINE_REF" >/dev/null ||
+            { echo "$BASELINE_REF isn't a branch or tag in this repository"; exit 1; }
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           ref: ${{ inputs.baseline_ref }}
