@@ -12,13 +12,13 @@ See [verification status](docs/verification.md) for the GPU runs behind each exa
 
 ## Examples
 
-| Example | What runs | Output |
-| --- | --- | --- |
-| [Batch object detection](batch-object-detection/) | DETR inference on two images | Detection boxes and labels |
-| [Parallel hyperparameter tuning](parallel-hyperparameter-tuning/) | Four ResNet50 configurations on CIFAR-10 | Losses for each configuration |
-| [Supervised fine-tuning](supervised-fine-tuning/) | LoRA training on SmolLM2 | Adapter and resumable checkpoints |
-| [GRPO fine-tuning](grpo-fine-tuning/) | Arithmetic rewards on SmolLM2 generations | Adapter and resumable checkpoints |
-| [LLM evaluation gate](llm-evaluation/) | A candidate answerer against a baseline on 500 ARC Easy questions | Per-question answers and a pass/fail regression decision |
+| Example | What runs | Output | Guide |
+| --- | --- | --- | --- |
+| [Batch object detection](batch-object-detection/) | DETR inference on two images | Detection boxes and labels | [Read](https://machine.dev/docs/use-cases/gpu-object-detection/?utm_source=github&utm_medium=oss&utm_campaign=2026-11-workflow-examples&utm_content=batch-object-detection) |
+| [Parallel hyperparameter tuning](parallel-hyperparameter-tuning/) | Four ResNet50 configurations on CIFAR-10 | Losses for each configuration | [Read](https://machine.dev/docs/use-cases/parallel-hyperparameter-tuning/?utm_source=github&utm_medium=oss&utm_campaign=2026-11-workflow-examples&utm_content=parallel-hyperparameter-tuning) |
+| [Supervised fine-tuning](supervised-fine-tuning/) | LoRA training on SmolLM2 | Adapter and resumable checkpoints | [Read](https://machine.dev/docs/use-cases/llm-supervised-fine-tuning/?utm_source=github&utm_medium=oss&utm_campaign=2026-11-workflow-examples&utm_content=supervised-fine-tuning) |
+| [GRPO fine-tuning](grpo-fine-tuning/) | Arithmetic rewards on SmolLM2 generations | Adapter and resumable checkpoints | [Read](https://machine.dev/docs/use-cases/grpo-fine-tuning/?utm_source=github&utm_medium=oss&utm_campaign=2026-11-workflow-examples&utm_content=grpo-fine-tuning) |
+| [LLM evaluation gate](llm-evaluation/) | A candidate answerer against a baseline on 500 ARC Easy questions | Per-question answers and a pass/fail regression decision | [Read](https://machine.dev/docs/use-cases/language-model-arena/?utm_source=github&utm_medium=oss&utm_campaign=2026-11-workflow-examples&utm_content=llm-evaluation) |
 
 ## Run an example
 
