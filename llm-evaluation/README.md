@@ -58,8 +58,8 @@ the conventional one, not a number picked to make a run pass.
   little about your application. Replace the questions with ones that represent
   what your users ask.
 
-See [verification status](../docs/verification.md) for the GPU runs recorded
-against this version.
+See [verification status](../docs/verification.md) for the latest GPU runs
+and the commit they tested.
 
 ## Adapt it
 
