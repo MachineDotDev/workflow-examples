@@ -2,6 +2,8 @@
 
 Train a LoRA adapter on the public SmolLM2 135M model using four short example texts.
 
+The [machine.dev guide](https://machine.dev/docs/use-cases/llm-supervised-fine-tuning/?utm_source=github&utm_medium=oss&utm_campaign=2026-11-workflow-examples&utm_content=supervised-fine-tuning) walks through the workflow, what a real run found and how to adapt it to your project.
+
 ## How to run
 
 1. Complete the [repository setup](../README.md#run-an-example).

@@ -2,6 +2,8 @@
 
 Train ResNet50 on CIFAR-10 with four combinations of learning rate and batch size.
 
+The [machine.dev guide](https://machine.dev/docs/use-cases/parallel-hyperparameter-tuning/?utm_source=github&utm_medium=oss&utm_campaign=2026-11-workflow-examples&utm_content=parallel-hyperparameter-tuning) walks through the workflow, what a real run found and how to adapt it to your project.
+
 ## How to run
 
 1. Complete the [repository setup](../README.md#run-an-example).

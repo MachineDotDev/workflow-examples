@@ -10,6 +10,8 @@ of that code with the same pinned model on the same 500 ARC Easy questions,
 then compares them question by question. The job fails when the candidate
 loses significantly more questions than it gains.
 
+The [machine.dev guide](https://machine.dev/docs/use-cases/language-model-arena/?utm_source=github&utm_medium=oss&utm_campaign=2026-11-workflow-examples&utm_content=llm-evaluation) walks through the workflow, what a real run found and how to adapt it to your project.
+
 ## How to run
 
 1. Complete the [repository setup](../README.md#run-an-example).
