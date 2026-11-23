@@ -23,9 +23,14 @@ for path in (root / ".github/workflows").glob("*.yml"):
     assert "pull_request_target" not in triggers, path
     for job in data["jobs"].values():
         runner = str(job.get("runs-on", ""))
-        if runner.startswith("machine/"):
+        if "machine" in runner:
+            assert runner.startswith("machine/"), path
             assert set(triggers) == {"workflow_dispatch"}, path
-            assert "github.ref == 'refs/heads/main'" in job["if"], path
+            assert (
+                job["if"]
+                == "github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main'"
+            ), path
+            assert "permissions" not in job, path
             assert job["timeout-minutes"] <= 30, path
             assert job.get("environment") == "gpu", path
             assert "${{ github.run_id }}-${{ github.run_attempt }}" in runner, path
