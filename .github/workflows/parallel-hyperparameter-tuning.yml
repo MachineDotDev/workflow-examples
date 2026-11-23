@@ -12,7 +12,6 @@ jobs:
     environment: gpu
     strategy:
       fail-fast: false
-      max-parallel: 1
       matrix:
         learning-rate: ['0.001', '0.0001']
         batch-size: [8, 16]
